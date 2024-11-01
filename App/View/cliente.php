@@ -28,9 +28,9 @@
                             <td><?php echo $cliente['CPF']; ?></td>
                             <td><?php echo $cliente['endereco']; ?></td>
                             <td><?php echo $cliente['historico']; ?></td>
-                            <td><a href="atualizar.php?id=" <?php $cliente['id']; ?>>Atualizar</a>
+                            <td><a href="atualizar.php?id=<?php echo $cliente['id']; ?>">Atualizar</a>
                             ou
-                            <a href="excluir.php?id=" <?php $cliente['id']; ?>>Excluir</a></td>
+                            <a href="excluir.php?id=<?php echo $cliente['id']; ?>">Excluir</a></td>
                 <?php endforeach; ?>
                 <tbody>
             </table>
