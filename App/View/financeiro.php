@@ -15,16 +15,23 @@
                         <th>lucros</th>
                     </tr>
                 </thead>
-                <?php foreach ($financeiros as $financeiro): ?>
-                    <tbody>
+                </thead>
+                <?php if (isset($financeiros) && is_array($financeiros) && !empty($financeiros)): ?>
+                    <?php foreach ($financeiros as $financeiro): ?>
                         <tr>
                             <td><?php echo $financeiro['id']; ?></td>
                             <td><?php echo $financeiro['vendas']; ?></td>
                             <td><?php echo $financeiro['dispesas']; ?></td>
                             <td><?php echo $financeiro['lucros']; ?></td>
-                <?php endforeach; ?>
-                <tbody>
-            </table>
+                            </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="7">Nenhum financeiro encontrado.</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
     </fieldset>
 </body>
 </html>

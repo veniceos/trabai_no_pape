@@ -17,8 +17,9 @@
                         <th>jornada</th>
                     </tr>
                 </thead>
-                <?php foreach ($funcionarios as $funcionario): ?>
-                    <tbody>
+                <tbody>
+                <?php if (isset($funcionarios) && is_array($funcionarios) && !empty($funcionarios)): ?>
+                    <?php foreach ($funcionarios as $funcionario): ?>
                         <tr>
                             <td><?php echo $funcionario['id']; ?></td>
                             <td><?php echo $funcionario['nome']; ?></td>
@@ -26,9 +27,15 @@
                             <td><?php echo $funcionario['cargo']; ?></td>
                             <td><?php echo $funcionario['horario']; ?></td>
                             <td><?php echo $funcionario['jornada']; ?></td>
-                <?php endforeach; ?>
-                <tbody>
-            </table>
+                            </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="7">Nenhum funcionario encontrado.</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
     </fieldset>
 </body>
 </html>

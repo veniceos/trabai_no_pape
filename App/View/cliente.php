@@ -6,20 +6,21 @@
 <body>
     <fieldset>
         <h1>Lista de clientes</h1>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>nome</th>
-                        <th>email</th>
-                        <th>telefone</th>
-                        <th>CPF</th>
-                        <th>endereço</th>
-                        <th>histórico</th>
-                    </tr>
-                </thead>
-                <?php foreach ($clientes as $cliente): ?>
-                    <tbody>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th>CPF</th>
+                    <th>Endereço</th>
+                    <th>Histórico</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if (isset($clientes) && is_array($clientes) && !empty($clientes)): ?>
+                    <?php foreach ($clientes as $cliente): ?>
                         <tr>
                             <td><?php echo $cliente['id']; ?></td>
                             <td><?php echo $cliente['nome']; ?></td>
@@ -28,9 +29,18 @@
                             <td><?php echo $cliente['CPF']; ?></td>
                             <td><?php echo $cliente['endereco']; ?></td>
                             <td><?php echo $cliente['historico']; ?></td>
-                <?php endforeach; ?>
-                <tbody>
-            </table>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="7">Nenhum cliente encontrado.</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
     </fieldset>
+
+    <a href="">Cadastrar</a>
+    <a href="../Public/index.php">Voltar</a>
 </body>
 </html>

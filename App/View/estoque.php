@@ -20,9 +20,8 @@
                         <th>fornecedor</th>
                     </tr>
                 </thead>
-                <?php foreach ($estoques as $estoque): ?>
-                    <tbody>
-                        <tr>
+                <?php if (isset($estoques) && is_array($estoques) && !empty($estoques)): ?>
+                    <?php foreach ($estoques as $estoque): ?>
                             <td><?php echo $estoque['id']; ?></td>
                             <td><?php echo $estoque['nome']; ?></td>
                             <td><?php echo $estoque['categoria']; ?></td>
@@ -32,9 +31,15 @@
                             <td><?php echo $estoque['saida']; ?></td>
                             <td><?php echo $estoque['quantidade_minima']; ?></td>
                             <td><?php echo $estoque['fornecedor']; ?></td>
-                <?php endforeach; ?>
-                <tbody>
-            </table>
+                            </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="7">Nenhum estoque encontrado.</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
     </fieldset>
 </body>
 </html>

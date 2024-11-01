@@ -18,8 +18,9 @@
                         <th>produtos</th>
                     </tr>
                 </thead>
-                <?php foreach ($fornecedores as $fornecedor): ?>
-                    <tbody>
+                </thead>
+                <?php if (isset($fornecedores) && is_array($fornecedores) && !empty($fornecedores)): ?>
+                    <?php foreach ($fornecedores as $fornecedor): ?>
                         <tr>
                             <td><?php echo $fornecedor['id']; ?></td>
                             <td><?php echo $fornecedor['nome']; ?></td>
@@ -28,9 +29,15 @@
                             <td><?php echo $fornecedor['telefone']; ?></td>
                             <td><?php echo $fornecedor['email']; ?></td>
                             <td><?php echo $fornecedor['produtos']; ?></td>
-                <?php endforeach; ?>
-                <tbody>
-            </table>
+                            </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="7">Nenhum cliente encontrado.</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
     </fieldset>
 </body>
 </html>
