@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lista de Clientes</title>
+    <title>Lista de clientes</title>
 </head>
 <body>
     <fieldset>
-        <h1>Lista de Clientes</h1>
+        <h1>Lista de clientes</h1>
             <table border="1">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Titulo</th>
-                        <th>Conteudo</th>
-                        <th>Autor</th>
-                        <th>Imagem</th>
+                        <th>nome</th>
+                        <th>email</th>
+                        <th>telefone</th>
+                        <th>CPF</th>
+                        <th>endereço</th>
+                        <th>histórico</th>
                     </tr>
                 </thead>
                 <?php foreach ($clientes as $cliente): ?>
