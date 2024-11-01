@@ -19,7 +19,7 @@ class ClienteController {
 
     public function exibirListaClientes() {
         $clientes = $this->clienteModel->listarClientes();
-        include 'C:\xampp\htdocs\Trabai_no_pape\App\View\cliente\cliente.php';
+        include 'C:\xampp\htdocs\Trabai_no_pape\App\View\cliente.php';
     }
 
     public function atualizarCliente($id, $nome, $email, $telefone, $CPF, $endereco, $historico) {
@@ -28,6 +28,10 @@ class ClienteController {
     
     public function excluirCliente ($id) {
         $this->clienteModel->excluirCliente($id);
+    }
+
+    public function showClienteId($id) {
+        return $this->clienteModel->showClienteId($id);
     }
 }
 ?>

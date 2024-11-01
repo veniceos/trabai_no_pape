@@ -29,15 +29,12 @@
                             <td><?php echo $cliente['CPF']; ?></td>
                             <td><?php echo $cliente['endereco']; ?></td>
                             <td><?php echo $cliente['historico']; ?></td>
-                        </tr>
-                    <?php endforeach; ?>
-                <?php else: ?>
-                    <tr>
-                        <td colspan="7">Nenhum cliente encontrado.</td>
-                    </tr>
-                <?php endif; ?>
-            </tbody>
-        </table>
+                            <td><a href="atualizar.php?id=<?php echo $cliente['id']; ?>">Atualizar</a>
+                            ou
+                            <a href="excluir.php?id=<?php echo $cliente['id']; ?>">Excluir</a></td>
+                <?php endforeach; ?>
+                <tbody>
+            </table>
     </fieldset>
 
     <a href="">Cadastrar</a>
