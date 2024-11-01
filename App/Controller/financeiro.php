@@ -6,7 +6,7 @@ class FinanceiroModel {
 
     public function __construct($pdo) {
 
-        $this->financeiroModel = new ClinteModel($pdo);
+        $this->financeiroModel = new FinanceiroModel($pdo);
     }
 
     public function criarFinanceiro($vendas, $dispesas, $lucros) {
