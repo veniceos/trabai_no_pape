@@ -19,8 +19,8 @@
                     <th>ações</th>
                     </tr>
                 </thead>
-                <?php if (isset($estoques) && is_array($estoques) && !empty($estoques)): ?>
-                    <?php foreach ($estoques as $estoque): ?><tr>
+                <?php if (isset($clientes) && is_array($clientes) && !empty($clientes)): ?>
+                    <?php foreach ($clientes as $cliente): ?><tr>
                             <td><?php echo $cliente['id']; ?></td>
                             <td><?php echo $cliente['nome']; ?></td>
                             <td><?php echo $cliente['email']; ?></td>
@@ -35,7 +35,7 @@
                     <?php endforeach; ?>
                 <?php else: ?>
                     <tr>
-                        <td colspan="7">Nenhum estoque encontrado.</td>
+                        <td colspan="7">Nenhum cliente encontrado.</td>
                     </tr>
                 <?php endif; ?>
             </tbody>
