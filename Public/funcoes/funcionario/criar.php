@@ -1,6 +1,6 @@
 <?php
     require_once 'C:\xampp\htdocs\Trabai_no_pape\config\config.php';
-    require_once 'C:\xampp\htdocs\Trabai_no_pape\App\Controller\funcionario.php';
+    require_once 'C:\xampp\htdocs\Trabai_no_pape\App\Controller\funcionarios.php';
 
     $funcionarioController = new FuncionarioController($pdo);
 

@@ -1,5 +1,5 @@
 <?php 
-require_once '../Model/fornecedores.php';
+require_once 'C:\xampp\htdocs\Trabai_no_pape\App\Model\fornecedores.php';
 
 class FornecedorController {
     private $fornecedorModel;
@@ -19,7 +19,7 @@ class FornecedorController {
 
     public function exibirListaFornecedores() {
         $fornecedores = $this->fornecedorModel->listarFornecedores();
-        include '';
+        include 'C:\xampp\htdocs\Trabai_no_pape\App\View\fornecedor.php';
     }
 
     public function atualizarfornecedor($id, $nome, $cnpj, $endereco, $telefone, $email, $produtos) {

@@ -9,4 +9,5 @@ $clienteController->exibirListaClientes();
 
 ?>
 
-<a href="criar.php">Criar Cliente</a>
+<a href="../../../Public/index.php">voltar</a>                  
+<a href="../../funcoes/cliente/criar.php">Criar Cliente</a>

@@ -1,5 +1,5 @@
 <?php 
-require_once '../Model/estoque.php';
+require_once 'C:\xampp\htdocs\Trabai_no_pape\App\Model\estoque.php';
 
 class EstoqueController {
     private $estoqueModel;
@@ -19,7 +19,7 @@ class EstoqueController {
 
     public function exibirListaEstoques() {
         $estoques = $this->estoqueModel->listarEstoques();
-        include '';
+        include 'C:\xampp\htdocs\Trabai_no_pape\App\View\estoque.php';
     }
 
     public function atualizarEstoque($id, $nome, $categoria, $unidade, $quantidade, $entrada, $saida, $quantidade_minima, $fornecedor) {

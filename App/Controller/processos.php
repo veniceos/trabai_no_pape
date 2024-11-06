@@ -1,5 +1,5 @@
 <?php 
-require_once '../Model/processos.php';
+require_once 'C:\xampp\htdocs\Trabai_no_pape\App\Model\processos.php';
 
 class ProcessosController {
     private $processoModel;
@@ -19,7 +19,7 @@ class ProcessosController {
 
     public function exibirListaProcessos() {
         $processos = $this->processoModel->listarProcessos();
-        include '';
+        include 'C:\xampp\htdocs\Trabai_no_pape\App\View\processos.php';
     }
 
     public function atualizarProcesso($id,$descricao, $dados, $estatus, $responsavel, $rastreamento, $observacoes) {

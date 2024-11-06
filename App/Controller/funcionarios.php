@@ -1,5 +1,5 @@
 <?php 
-require_once '../Model/funcionarios.php';
+require_once 'C:\xampp\htdocs\Trabai_no_pape\App\Model\funcionarios.php';
 
 class FuncionarioController {
     private $funcionarioModel;
@@ -19,7 +19,7 @@ class FuncionarioController {
 
     public function exibirListaFuncionarios() {
         $funcionarios = $this->funcionarioModel->listarFuncionarios();
-        include '';
+        include 'C:\xampp\htdocs\Trabai_no_pape\App\View\funcionarios.php';
     }
 
     public function atualizarFuncionario($id,$nome, $cpf, $cargo, $horario, $jornada) {

@@ -41,7 +41,6 @@
             </tbody>
         </table>
     </fieldset>
-
-    <a href="../Public/index.php">Voltar</a>
+     
 </body>
 </html>

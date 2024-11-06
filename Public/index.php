@@ -8,17 +8,17 @@
 </head>
 <body>
     <div class="container-a">
-<a href="../App/View/cliente.php">controle de clientes</a>
+<a href="funcoes/cliente/lista.php">controle de clientes</a>
 <br>
-<a href="../App/View/funcionarios.php">controle de funcionarios</a>
+<a href="funcoes/funcionario/lista.php">controle de funcionarios</a>
 <br>
-<a href="../App/View/fornecedor.php">controle de fornecedores</a>
+<a href="funcoes/fornecedores/lista.php">controle de fornecedores</a>
 <br>
-<a href="../App/View/estoque.php">controle de estoque</a>
+<a href="funcoes/estoque/lista.php">controle de estoque</a>
 <br>
-<a href="../App/View/financeiro.php">relatório financeiro</a>
+<a href="funcoes/financeiro/lista.php">relatório financeiro</a>
 <br>
-<a href="../App/View/processos.php">acompanhamento de processos</a>
+<a href="funcoes/processo/lista.php">acompanhamento de processos</a>
 <br>
 </div>
 

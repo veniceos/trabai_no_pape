@@ -1,5 +1,5 @@
 <?php 
-require_once '../Model/financeiro.php';
+require_once 'C:\xampp\htdocs\Trabai_no_pape\App\Model\financeiro.php';
 
 class FinanceiroController {
     private $financeiroModel;
@@ -19,7 +19,7 @@ class FinanceiroController {
 
     public function exibirListaFinanceiros() {
         $financeiros = $this->financeiroModel->listarFinanceiros();
-        include '';
+        include 'C:\xampp\htdocs\Trabai_no_pape\App\View\financeiro.php';
     }
 
     public function atualizarFinanceiro($id, $vendas, $dispesas, $lucros) {
