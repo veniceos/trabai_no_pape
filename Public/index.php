@@ -12,7 +12,7 @@
 <br>
 <a href="funcoes/funcionario/lista.php">controle de funcionarios</a>
 <br>
-<a href="funcoes/fornecedores/lista.php">controle de fornecedores</a>
+<a href="funcoes/fornecedor/lista.php">controle de fornecedores</a>
 <br>
 <a href="funcoes/estoque/lista.php">controle de estoque</a>
 <br>

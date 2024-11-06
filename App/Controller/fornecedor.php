@@ -1,5 +1,5 @@
 <?php 
-require_once 'C:\xampp\htdocs\Trabai_no_pape\App\Model\fornecedores.php';
+require_once 'C:\xampp\htdocs\Trabai_no_pape\App\Model\fornecedor.php';
 
 class FornecedorController {
     private $fornecedorModel;

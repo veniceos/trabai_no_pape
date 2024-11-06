@@ -1,8 +1,8 @@
 <?php
 require_once 'C:\xampp\htdocs\Trabai_no_pape\config\config.php';
-require_once 'C:\xampp\htdocs\Trabai_no_pape\App\Controller\processos.php';
+require_once 'C:\xampp\htdocs\Trabai_no_pape\App\Controller\processo.php';
 
-$processoController = new ProcessosController($pdo);
+$processoController = new ProcessoController($pdo);
 $processos = $processoController->listarProcessos();
 
 $processoController->exibirListaProcessos();

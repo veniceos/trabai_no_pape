@@ -1,11 +1,20 @@
 <?php
-    require_once 'C:\xampp\htdocs\Trabai_no_pape\config\config.php';
-    require_once 'C:\xampp\htdocs\Trabai_no_pape\App\Controller\funcionarios.php';
+    require_once 'C:/xampp/htdocs/Trabai_no_pape/config/config.php';
+    require_once 'C:/xampp/htdocs/Trabai_no_pape/App/Controller/funcionarios.php';
 
     $funcionarioController = new FuncionarioController($pdo);
 
-    if (isset($_POST['nome'], $_POST['cpf'], $_POST['cargo'], $_POST['horario'], $_POST['jornada'])) {
-        $funcionarioController->criarFuncionario($_POST['nome'], $_POST['cpf'], $_POST['cargo'], $_POST['horario'], $_POST['jornada']);
+    if (isset($_POST['nome'], 
+    $_POST['cpf'], 
+    $_POST['cargo'], 
+    $_POST['horario'], 
+    $_POST['jornada'])) {
+        $funcionarioController->criarFuncionario(
+            $_POST['nome'], 
+            $_POST['cpf'], 
+            $_POST['cargo'], 
+            $_POST['horario'], 
+            $_POST['jornada']);
         header('Location: ' . $_SERVER['PHP_SELF']);
         exit;
     }

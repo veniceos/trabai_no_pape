@@ -22,7 +22,7 @@ class FuncionarioController {
         include 'C:\xampp\htdocs\Trabai_no_pape\App\View\funcionarios.php';
     }
 
-    public function atualizarFuncionario($id,$nome, $cpf, $cargo, $horario, $jornada) {
+    public function atualizarFuncionario($id, $nome, $cpf, $cargo, $horario, $jornada) {
         $this->funcionarioModel->atualizarFuncionario($id, $nome, $cpf, $cargo, $horario, $jornada);
     }
     

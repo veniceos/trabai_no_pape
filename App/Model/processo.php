@@ -1,5 +1,5 @@
 <?php
-class ProcessosModel {
+class ProcessoModel {
     private $pdo;
 
     public function __construct($pdo) {
@@ -11,6 +11,9 @@ class ProcessosModel {
         $sql = "INSERT INTO processo (descricao, dados, estatus, responsavel, rastreamento, observacoes) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$descricao, $dados, $estatus, $responsavel, $rastreamento, $observacoes]);
+
+        header('Location: lista.php');
+        exit();
     }
 
     // Model para listar processo
@@ -21,10 +24,13 @@ class ProcessosModel {
     }
 
         // Model para atualizar processo
-        public function atualizarProcesso($descricao, $dados, $estatus, $responsavel, $rastreamento, $observacoes){
-            $sql = "UPDATE processo SET descricao = ?, dados = ?, estatus = ?, responsavel = ?, rastreamento = ?, observacoes WHERE id = ?";
+        public function atualizarProcesso($id, $descricao, $dados, $estatus, $responsavel, $rastreamento, $observacoes){
+            $sql = "UPDATE processo SET descricao = ?, dados = ?, estatus = ?, responsavel = ?, rastreamento = ?, observacoes = ? WHERE id = ?";
             $stmt = $this->pdo->prepare($sql);
-            $stmt->execute([$descricao, $dados, $estatus, $responsavel, $rastreamento, $observacoes]);
+            $stmt->execute([$descricao, $dados, $estatus, $responsavel, $rastreamento, $observacoes, $id]);
+
+            header('Location: lista.php');
+            exit();
         }
         
         // Model para deletar processo

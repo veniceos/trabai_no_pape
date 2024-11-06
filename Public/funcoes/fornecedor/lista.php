@@ -1,6 +1,6 @@
 <?php
 require_once 'C:\xampp\htdocs\Trabai_no_pape\config\config.php';
-require_once 'C:\xampp\htdocs\Trabai_no_pape\App\Controller\fornecedores.php';
+require_once 'C:\xampp\htdocs\Trabai_no_pape\App\Controller\fornecedor.php';
 
 $fornecedorController = new fornecedorController($pdo);
 $fornecedores = $fornecedorController->listarFornecedores();

@@ -1,12 +1,12 @@
 <?php 
-require_once 'C:\xampp\htdocs\Trabai_no_pape\App\Model\processos.php';
+require_once 'C:\xampp\htdocs\Trabai_no_pape\App\Model\processo.php';
 
-class ProcessosController {
+class ProcessoController {
     private $processoModel;
 
     public function __construct($pdo) {
 
-        $this->processoModel = new ProcessosModel($pdo);
+        $this->processoModel = new ProcessoModel($pdo);
     }
 
     public function criarProcesso($descricao, $dados, $estatus, $responsavel, $rastreamento, $observacoes) {
@@ -22,7 +22,7 @@ class ProcessosController {
         include 'C:\xampp\htdocs\Trabai_no_pape\App\View\processos.php';
     }
 
-    public function atualizarProcesso($id,$descricao, $dados, $estatus, $responsavel, $rastreamento, $observacoes) {
+    public function atualizarProcesso($id, $descricao, $dados, $estatus, $responsavel, $rastreamento, $observacoes) {
         $this->processoModel->atualizarProcesso($id, $descricao, $dados, $estatus, $responsavel, $rastreamento, $observacoes);
     }
     

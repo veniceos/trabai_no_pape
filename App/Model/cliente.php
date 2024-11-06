@@ -10,6 +10,9 @@ class ClienteModel {  // Corrigido para 'ClienteModel'
         $sql = "INSERT INTO cliente (nome, email, telefone, CPF, endereco, historico) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$nome, $email, $telefone, $CPF, $endereco, $historico]);
+
+        header('Location: lista.php');
+        exit();
     }
 
     public function listarClientes() {
@@ -22,6 +25,9 @@ class ClienteModel {  // Corrigido para 'ClienteModel'
         $sql = "UPDATE cliente SET nome = ?, email = ?, telefone = ?, CPF = ?, endereco = ?, historico = ? WHERE id = ?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$nome, $email, $telefone, $CPF, $endereco, $historico, $id]);
+
+        header('Location: lista.php');
+        exit();
     }
 
     public function excluirCliente($id) {

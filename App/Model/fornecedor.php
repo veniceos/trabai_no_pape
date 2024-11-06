@@ -21,10 +21,13 @@ class FornecedorModel {
     }
 
         // Model para atualizar fornecedor
-        public function atualizarFornecedor($nome, $cnpj, $endereco, $telefone, $email, $produtos){
-            $sql = "UPDATE fornecedor SET nome = ?, cnpj = ?, endereco = ?, telefone = ?, email = ?, produtos WHERE id = ?";
+        public function atualizarFornecedor($id, $nome, $cnpj, $endereco, $telefone, $email, $produtos) {
+            $sql = "UPDATE fornecedor SET nome = ?, cnpj = ?, endereco = ?, telefone = ?, email = ?, produtos = ? WHERE id = ?";
             $stmt = $this->pdo->prepare($sql);
-            $stmt->execute([$nome, $cnpj, $endereco, $telefone, $email, $produtos]);
+            $stmt->execute([$nome, $cnpj, $endereco, $telefone, $email, $produtos, $id]);
+    
+            header('Location: lista.php');
+            exit();
         }
         
         // Model para deletar fornecedor

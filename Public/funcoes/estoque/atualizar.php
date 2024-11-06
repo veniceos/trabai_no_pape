@@ -1,17 +1,42 @@
 <?php
-require_once 'C:\xampp\htdocs\Trabai_no_pape\config\config.php';
-require_once 'C:\xampp\htdocs\Trabai_no_pape\App\Controller\estoque.php';
+    require_once 'C:\xampp\htdocs\Trabai_no_pape\config\config.php';
+    require_once 'C:\xampp\htdocs\Trabai_no_pape\App\Controller\estoque.php';
 
-$estoqueController = new EstoqueController($pdo);
+    $estoqueController = new EstoqueController($pdo);
+    $estoques = $estoqueController->listarEstoques();
 
-// Verificar se o ID está no URL e buscar o estoque
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-    $estoque = $estoqueController->showEstoqueId($id);
+    if (isset($_GET['id'], 
+    $_POST['atualizar_nome'], 
+    $_POST['atualizar_categoria'], 
+    $_POST['atualizar_unidade'], 
+    $_POST['atualizar_quantidade'], 
+    $_POST['atualizar_entrada'], 
+    $_POST['atualizar_saida'], 
+    $_POST['atualizar_quantidade_minima'], 
+    $_POST['atualizar_fornecedor'])) {
+        $estoqueController->atualizarEstoque(
+            $_GET['id'], 
+            $_POST['atualizar_nome'], 
+            $_POST['atualizar_categoria'], 
+            $_POST['atualizar_unidade'], 
+            $_POST['atualizar_quantidade'], 
+            $_POST['atualizar_entrada'], 
+            $_POST['atualizar_saida'], 
+            $_POST['atualizar_quantidade_minima'], 
+            $_POST['atualizar_fornecedor']);
+        header('Location: ' . $_SERVER['PHP_SELF']);
+        exit;
+    }
 
-    if ($estoque) {
-?>
-        <fieldset>
+           // Verificar se o ID está no URL e buscar o estoque
+           if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $estoque = $estoqueController->showEstoqueId($id);
+    
+            if ($estoque) { 
+    ?>
+
+<fieldset>
             <h2>Atualizar Estoque</h2>
             <form method="post">
                 <input value="<?php echo htmlspecialchars($estoque['nome']); ?>" type="text" name="atualizar_nome" placeholder="Nome" required>
@@ -26,10 +51,11 @@ if (isset($_GET['id'])) {
             </form>
         </fieldset>
 <?php
+        } else {
+            echo "<p>Estoque não encontrado.</p>";
+        }
     } else {
-        echo "<p>Estoque não encontrado.</p>";
+        echo "<p>ID do estoque não especificado.</p>";
     }
-} else {
-    echo "<p>ID do estoque não especificado.</p>";
-}
 ?>
+

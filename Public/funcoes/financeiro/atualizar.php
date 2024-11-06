@@ -1,30 +1,50 @@
 <?php
-require_once 'C:\xampp\htdocs\Trabai_no_pape\config\config.php';
-require_once 'C:\xampp\htdocs\Trabai_no_pape\App\Controller\financeiro.php';
+    require_once 'C:\xampp\htdocs\Trabai_no_pape\config\config.php';
+    require_once 'C:\xampp\htdocs\Trabai_no_pape\App\Controller\financeiro.php';
 
-$financeiroController = new FinanceiroController($pdo);
+    $financeiroController = new FinanceiroController($pdo);
+    $financeiros = $financeiroController->listarFinanceiros();
 
-// Verificar se o ID está no URL e buscar o financeiro
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-    $financeiro = $financeiroController->showFinanceiroId($id);
+    if (isset($_GET['id'], 
+    $_POST['atualizar_vendas'], 
+    $_POST['atualizar_dispesas'], 
+    $_POST['atualizar_lucros'])) {
+        $financeiroController->atualizarFinanceiro(
+            $_GET['id'], 
+            $_POST['atualizar_vendas'], 
+            $_POST['atualizar_dispesas'], 
+            $_POST['atualizar_lucros']);
+        header('Location: ' . $_SERVER['PHP_SELF']);
+        exit;
+    }
 
-    if ($financeiro) {
-?>
-        <fieldset>
+           // Verificar se o ID está no URL e buscar o financeiro
+           if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $financeiro = $financeiroController->showFinanceiroId($id);
+    
+            if ($financeiro) { 
+    ?>
+
+<fieldset>
             <h2>Atualizar Financeiro</h2>
             <form method="post">
                 <input value="<?php echo htmlspecialchars($financeiro['vendas']); ?>" type="text" name="atualizar_vendas" placeholder="Vendas" required>
-                <input value="<?php echo htmlspecialchars($financeiro['dispesas']); ?>" type="text" name="atualizar_despesas" placeholder="Despesas" required>
+                <input value="<?php echo htmlspecialchars($financeiro['dispesas']); ?>" type="text" name="atualizar_dispesas" placeholder="Despesas" required>
                 <input value="<?php echo htmlspecialchars($financeiro['lucros']); ?>" type="text" name="atualizar_lucros" placeholder="Lucros" required>
                 <button type="submit">Atualizar Financeiro</button>
             </form>
         </fieldset>
+        
+
 <?php
+        } else {
+            echo "<p>Financeiro não encontrado.</p>";
+        }
     } else {
-        echo "<p>Financeiro não encontrado.</p>";
+        echo "<p>ID do financeiro não especificado.</p>";
     }
-} else {
-    echo "<p>ID do financeiro não especificado.</p>";
-}
 ?>
+
+
+

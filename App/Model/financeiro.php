@@ -11,6 +11,9 @@ class FinanceiroModel {
         $sql = "INSERT INTO financeiro (vendas, dispesas, lucros) VALUES (?, ?, ?)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$vendas, $dispesas, $lucros]);
+
+        header('Location: lista.php');
+        exit();
     }
 
     // Model para listar financeiro
@@ -21,10 +24,13 @@ class FinanceiroModel {
     }
 
         // Model para atualizar financeiro
-        public function atualizarFinanceiro($vendas, $dispesas, $lucros){
+        public function atualizarFinanceiro($id, $vendas, $dispesas, $lucros){
             $sql = "UPDATE financeiro SET vendas = ?, dispesas = ?, lucros = ? WHERE id = ?";
             $stmt = $this->pdo->prepare($sql);
-            $stmt->execute([$vendas, $dispesas, $lucros]);
+            $stmt->execute([$vendas, $dispesas, $lucros, $id]);
+
+            header('Location: lista.php');
+        exit();
         }
         
         // Model para deletar Financeiro
