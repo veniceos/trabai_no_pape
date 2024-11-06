@@ -29,6 +29,10 @@
                             <td><?php echo $processo['responsavel']; ?></td>
                             <td><?php echo $processo['rastreamento']; ?></td>
                             <td><?php echo $processo['observacoes']; ?></td>
+                            <td><a href="atualizar.php?id=<?php echo $processo['id']; ?>">Atualizar</a>
+                            ou
+                            <a href="excluir.php?id=<?php echo $processo['id']; ?>">Excluir</a></td>
+                            </tr>
                             </tr>
                     <?php endforeach; ?>
                 <?php else: ?>

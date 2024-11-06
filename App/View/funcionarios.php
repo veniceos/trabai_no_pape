@@ -27,6 +27,10 @@
                             <td><?php echo $funcionario['cargo']; ?></td>
                             <td><?php echo $funcionario['horario']; ?></td>
                             <td><?php echo $funcionario['jornada']; ?></td>
+                            <td><a href="atualizar.php?id=<?php echo $funcionario['id']; ?>">Atualizar</a>
+                            ou
+                            <a href="excluir.php?id=<?php echo $funcionario['id']; ?>">Excluir</a></td>
+                            </tr>
                             </tr>
                     <?php endforeach; ?>
                 <?php else: ?>

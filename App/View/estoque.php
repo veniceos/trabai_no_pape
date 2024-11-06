@@ -31,6 +31,10 @@
                             <td><?php echo $estoque['saida']; ?></td>
                             <td><?php echo $estoque['quantidade_minima']; ?></td>
                             <td><?php echo $estoque['fornecedor']; ?></td>
+                            <td><a href="atualizar.php?id=<?php echo $estoque['id']; ?>">Atualizar</a>
+                            ou
+                            <a href="excluir.php?id=<?php echo $estoque['id']; ?>">Excluir</a></td>
+                            </tr>
                             </tr>
                     <?php endforeach; ?>
                 <?php else: ?>

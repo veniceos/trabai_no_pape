@@ -33,5 +33,14 @@ class FinanceiroModel {
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute([$id]);
         }
+
+        public function showFinanceiroId($id) {
+            $sql = "SELECT * FROM financeiro WHERE id = :id";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+    
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
 }
 ?>

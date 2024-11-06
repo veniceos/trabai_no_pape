@@ -33,5 +33,14 @@ class ProcessosModel {
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute([$id]);
         }
+
+        public function showProcessoId($id) {
+            $sql = "SELECT * FROM processo WHERE id = :id";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+    
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
 }
 ?>

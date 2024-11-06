@@ -29,11 +29,15 @@
                             <td><?php echo $fornecedor['telefone']; ?></td>
                             <td><?php echo $fornecedor['email']; ?></td>
                             <td><?php echo $fornecedor['produtos']; ?></td>
+                            <td><a href="atualizar.php?id=<?php echo $fornecedor['id']; ?>">Atualizar</a>
+                            ou
+                            <a href="excluir.php?id=<?php echo $fornecedor['id']; ?>">Excluir</a></td>
+                            </tr>
                             </tr>
                     <?php endforeach; ?>
                 <?php else: ?>
                     <tr>
-                        <td colspan="7">Nenhum cliente encontrado.</td>
+                        <td colspan="7">Nenhum fornecedor encontrado.</td>
                     </tr>
                 <?php endif; ?>
             </tbody>

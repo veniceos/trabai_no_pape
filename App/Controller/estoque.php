@@ -1,12 +1,12 @@
 <?php 
 require_once '../Model/estoque.php';
 
-class EstoqueModel {
+class EstoqueController {
     private $estoqueModel;
 
     public function __construct($pdo) {
 
-        $this->estoqueModel = new ClinteModel($pdo);
+        $this->estoqueModel = new EstoqueModel($pdo);
     }
 
     public function criarEstoque($nome, $categoria, $unidade, $quantidade, $entrada, $saida, $quantidade_minima, $fornecedor) {
@@ -28,6 +28,10 @@ class EstoqueModel {
     
     public function excluirEstoque ($id) {
         $this->estoqueModel->excluirEstoque($id);
+    }
+
+    public function showEstoqueId($id) {
+        return $this->estoqueModel->showEstoqueId($id);
     }
 }
 ?>

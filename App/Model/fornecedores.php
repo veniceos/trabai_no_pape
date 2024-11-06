@@ -33,5 +33,14 @@ class FornecedorModel {
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute([$id]);
         }
+
+        public function showFornecedorId($id) {
+            $sql = "SELECT * FROM fornecedor WHERE id = :id";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+    
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
 }
 ?>

@@ -29,5 +29,9 @@ class FuncionarioController {
     public function excluirFuncionario ($id) {
         $this->funcionarioModel->excluirFuncionario($id);
     }
+
+    public function showFuncionarioId($id) {
+        return $this->funcionarioModel->showFuncionarioId($id);
+    }
 }
 ?>

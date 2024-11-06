@@ -23,6 +23,10 @@
                             <td><?php echo $financeiro['vendas']; ?></td>
                             <td><?php echo $financeiro['dispesas']; ?></td>
                             <td><?php echo $financeiro['lucros']; ?></td>
+                            <td><a href="atualizar.php?id=<?php echo $financeiro['id']; ?>">Atualizar</a>
+                            ou
+                            <a href="excluir.php?id=<?php echo $financeiro['id']; ?>">Excluir</a></td>
+                            </tr>
                             </tr>
                     <?php endforeach; ?>
                 <?php else: ?>

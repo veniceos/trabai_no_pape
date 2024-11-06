@@ -29,5 +29,9 @@ class ProcessosController {
     public function excluirProcesso ($id) {
         $this->processoModel->excluirProcesso($id);
     }
+
+    public function showProcessoId($id) {
+        return $this->processoModel->showProcessoId($id);
+    }
 }
 ?>

@@ -1,7 +1,7 @@
 <?php 
 require_once '../Model/financeiro.php';
 
-class FinanceiroModel {
+class FinanceiroController {
     private $financeiroModel;
 
     public function __construct($pdo) {
@@ -28,6 +28,10 @@ class FinanceiroModel {
     
     public function excluirFinanceiro ($id) {
         $this->financeiroModel->excluirFinanceiro($id);
+    }
+
+    public function showFinanceiroId($id) {
+        return $this->financeiroModel->showFinanceiroId($id);
     }
 }
 ?>

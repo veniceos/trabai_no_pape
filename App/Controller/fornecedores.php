@@ -29,5 +29,9 @@ class FornecedorController {
     public function excluirFornecedor ($id) {
         $this->fornecedorModel->excluirFornecedor($id);
     }
+
+    public function showFornecedorId($id) {
+        return $this->fornecedorModel->showFornecedorId($id);
+    }
 }
 ?>
