@@ -16,12 +16,11 @@
                     <th>CPF</th>
                     <th>Endereço</th>
                     <th>Histórico</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php if (isset($clientes) && is_array($clientes) && !empty($clientes)): ?>
-                    <?php foreach ($clientes as $cliente): ?>
-                        <tr>
+                    <th>ações</th>
+                    </tr>
+                </thead>
+                <?php if (isset($estoques) && is_array($estoques) && !empty($estoques)): ?>
+                    <?php foreach ($estoques as $estoque): ?><tr>
                             <td><?php echo $cliente['id']; ?></td>
                             <td><?php echo $cliente['nome']; ?></td>
                             <td><?php echo $cliente['email']; ?></td>
@@ -32,12 +31,17 @@
                             <td><a href="atualizar.php?id=<?php echo $cliente['id']; ?>">Atualizar</a>
                             ou
                             <a href="excluir.php?id=<?php echo $cliente['id']; ?>">Excluir</a></td>
-                <?php endforeach; ?>
-                <tbody>
-            </table>
+                            </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="7">Nenhum estoque encontrado.</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
     </fieldset>
 
-    <a href="">Cadastrar</a>
     <a href="../Public/index.php">Voltar</a>
 </body>
 </html>
